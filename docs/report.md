@@ -1,143 +1,82 @@
-# Portfolio de Deep Learning
+# Deep Learning
 
-**Autor:** Fabrizio Rejala  
-**Fecha:** 5 de octubre, 2025
+**Autor:** Fabrizio Rejala
 
----
+**Fecha:** 2025-09-05
 
-## Resumen Ejecutivo
+A continuación se enumeran las técnicas y modelos de entrenamiento disponibles en el repositorio.
 
-Durante este curso me metí de lleno en el mundo del deep learning y desarrollé 9 proyectos que cubren desde lo básico hasta temas más avanzados. Empecé con una red neuronal densa clásica para clasificar perros y gatos usando CIFAR-10, luego exploré autoencoders con MNIST para entender cómo comprimir y reconstruir datos. Me adentré en el procesamiento de secuencias con RNNs simples y bidireccionales, después implementé un traductor de frases inglés-español usando arquitecturas sequence-to-sequence. Para la parte más moderna, trabajé con modelos preentrenados de Transformers para detectar emociones y estimar edades, implementé sistemas RAG (Retrieval-Augmented Generation) para transcripciones de YouTube y generación de SQL, y finalmente exploré modelos generativos como VAEs y GANs para crear imágenes. Cada proyecto me permitió entender diferentes aspectos del deep learning, desde la clasificación básica hasta la generación de contenido y sistemas de recuperación de información.
+## 01 DNN Classification
 
----
+**Caso de uso**: Clasificación entre perros y gatos a partir de imágenes.
 
-## Problemas y Datasets
+**Objetivo**: En este proyecto se utilizó una _DNN_, con el objetivo de clasificar imágenes entre perros y gatos. El modelo aprende características relevantes delimitadas por los pixeles para distinguir entre perros y gatos.
 
-### 1. Clasificación DNN (Perros vs Gatos)
+**Dataset**: [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html).
 
-**Problema:** Clasificación binaria de imágenes para distinguir entre perros y gatos  
-**Dataset:** CIFAR-10 (filtrado para clases 3 y 5), 32x32 píxeles RGB
+## 02 SAE Autoencoder
 
-### 2. Autoencoder SAE
+**Caso de uso**: Compresión y reconstrucción de dígitos manuscritos.
 
-**Problema:** Compresión y reconstrucción de dígitos manuscritos  
-**Dataset:** MNIST, 28x28 píxeles en escala de grises
+**Objetivo**: En este proyecto se utilizó un _SAE_, con el objetivo de comprimir y reconstruir imágenes de dígitos manuscritos.
 
-### 3. RNN Simple
+**Dataset**: [MNIST](https://www.tensorflow.org/datasets/catalog/mnist).
 
-**Problema:** Procesamiento de secuencias básico  
-**Dataset:** Datos sintéticos para demostrar capacidades de memoria temporal
+## 03 Simple RNN
 
-### 4. RNN Bidireccional
+**Caso de uso**: Predicción de temperaturas.
 
-**Problema:** Análisis de secuencias con contexto pasado y futuro  
-**Dataset:** Secuencias con patrones que requieren contexto bidireccional
+**Objetivo**: En este proyecto se utilizó una _Simple RNN_ para modelar series temporales de temperaturas. El objetivo fue predecir valores futuros a partir de datos históricos, aprovechando la capacidad de las RNN para capturar dependencias secuenciales en el tiempo.
 
-### 5. Traducción Sequence-to-Sequence
+**Dataset:** Temperaturas de [Historical Hourly Weather Data](https://www.kaggle.com/datasets/selfishgene/historical-hourly-weather-data).
 
-**Problema:** Traducción de textos en inglés al español  
-**Dataset:** Corpus de frases paralelas spa-eng.zip de TensorFlow
+## 04 Bidirectional RNN
 
-### 6. IA Generativa (Detección de Emociones/Edad)
+**Caso de uso**: Analisis de sentimientos de las reseñas hechas en IMDB.
 
-**Problema:** Análisis de rostros para detectar emociones y estimar edad  
+**Objetivo**: Es este proyecto se utilizó una _Bidirectional RNN_ para el análisis de sentimientos en reseñas de películas de IMDB. El objetivo fue procesar las reseñas hechas en IMDB para construir un modelo que pueda tener un entendimiento más completo del contexto para clasificar las reseñas como positivas o negativas.
+
+**Dataset:** [IMDB movie review](https://keras.io/api/datasets/imdb/) de Keras.
+
+## 05 Seq2Seq
+
+**Caso de uso**: Traducciónes de textos en ingles al español.
+
+**Objetivo**: En este proyecto se utilizó un _Seq2Seq_, con el objetivo de traducir oraciones del inglés al español. El modelo aplica una arquitectura encoder y decoder, donde el encoder comprime la oración original en un vector de contexto y el decoder genera la traducción.
+
+**Dataset**: [English-to-Spanish translation dataset provided by Anki](https://www.manythings.org/anki/spa-eng.zip).
+
+## 06 Generative AI
+
+**Caso de uso**: Análisis de sentimientos de imágenes obtenidas usando la webcam.
+
+**Objetivo**: En este proyecto se utilizó _Generative AI_, con el objetivo de analizar sentimientos en imágenes capturadas con la webcam.
+
 **Dataset:** Modelos preentrenados de HuggingFace (dima806/facial_emotions_image_detection, Robys01/facial_age_estimator)
 
-### 7. RAG con Transcripciones de YouTube
+## 07 RAG Transcription
 
-**Problema:** Sistema de Q&A sobre contenido de videos de YouTube  
-**Dataset:** Transcripciones automáticas de videos usando YouTube Transcript API
+**Caso de uso**: Realizar preguntas y respuestas utilizando la transcripción de un video de Youtube.
 
-### 8. RAG para Generación de SQL
+**Objetivo**: En este proyecto se utilizó un _RAG_, con el objetivo de responder preguntas a partir de la transcripción de un video de YouTube, combinando técnicas de recuperación de información con generación de texto, lo que permite buscar fragmentos relevantes en la transcripción y generar respuestas.
 
-**Problema:** Generación automática de consultas SQL basadas en preguntas en lenguaje natural  
-**Dataset:** Esquemas de bases de datos y consultas de ejemplo
+## 08 RAG SQL
 
-### 9. VAE y GANs
+**Caso de uso**: Generación automática de consultas SQL basadas en preguntas en lenguaje natural .
 
-**Problema:** Generación de imágenes sintéticas  
-**Dataset:** Facades dataset (arquitectura) para transformación imagen-a-imagen
+**Objetivo**: En este proyecto se utilizó un modelo de _RAG_, con el objetivo de transformar preguntas en lenguaje natural en consultas SQL automáticas.
 
----
+## 09 VAEs y GANs
 
-## Metodología por Módulo
+**Caso de uso**: Generación de estructuras de edificios usando como estructuras existentes como entrenamiento.
 
-### 1. DNN Clasificación
+**Objetivo**: En este proyecto se utilizaron _VAEs_ y _GANs_, con el objetivo de generar nuevas estructuras de edificios a partir de ejemplos de entrenamiento. El modelo aprendió patrones de diseño y fue capaz de producir esbozos de estructuras.
 
-**Arquitectura:** Red neuronal densa multicapa con capas fully-connected  
-**Hiperparámetros clave:** Learning rate adaptativo, dropout para regularización, early stopping  
-**Recursos:** CPU/GPU básico, TensorFlow/Keras
+**Dataset:** [Facades dataset](https://efrosgans.eecs.berkeley.edu/pix2pix/datasets/facades.tar.gz)
 
-### 2. Autoencoder SAE
+## Trabajos Futuros
 
-**Arquitectura:** Encoder (784→512→256→128→64) + Decoder (64→128→256→512→784)  
-**Hiperparámetros clave:** Dimensión del cuello de botella (64), función de pérdida MSE  
-**Recursos:** Entrenamiento rápido en CPU, visualización de reconstrucciones
-
-### 3. RNN Simple
-
-**Arquitectura:** Capas LSTM/GRU básicas para procesamiento secuencial  
-**Hiperparámetros clave:** Unidades ocultas, longitud de secuencia, dropout temporal  
-**Recursos:** GPU recomendada para secuencias largas
-
-### 4. RNN Bidireccional
-
-**Arquitectura:** Bidirectional LSTM que procesa secuencias en ambas direcciones  
-**Hiperparámetros clave:** Número de unidades LSTM, merge_mode para combinar direcciones  
-**Recursos:** Mayor costo computacional que RNN unidireccional
-
-### 5. Traducción Seq2Seq
-
-**Arquitectura:** Encoder-Decoder con attention mechanism  
-**Hiperparámetros clave:** Dimensiones de embedding, tamaño de vocabulario, beam search  
-**Recursos:** GPU necesaria, dataset de ~100k pares de frases
-
-### 6. IA Generativa
-
-**Arquitectura:** Modelos Transformer preentrenados (fine-tuning)  
-**Hiperparámetros clave:** Threshold de confianza, procesamiento de imágenes  
-**Recursos:** Modelos HuggingFace, inferencia en tiempo real
-
-### 7. RAG YouTube
-
-**Arquitectura:** Embeddings (all-minilm) + ChromaDB + LLaMA3 local  
-**Hiperparámetros clave:** Chunk size para splitting, top-k retrieval  
-**Recursos:** Ollama local, vectorstore persistente
-
-### 8. RAG SQL
-
-**Arquitectura:** Similar a RAG YouTube pero especializado en esquemas SQL  
-**Hiperparámetros clave:** Prompts específicos para SQL, validación de sintaxis  
-**Recursos:** Base de conocimiento de esquemas SQL
-
-### 9. VAE y GANs
-
-**Arquitectura:** Variational Autoencoder + Generative Adversarial Networks  
-**Hiperparámetros clave:** Learning rates diferenciados (G vs D), beta para VAE  
-**Recursos:** GPU intensiva, dataset de imágenes de fachadas
-
----
-
-## Lecciones Aprendidas y Trabajo Futuro
-
-### Lo que aprendí
-
-- **Progresión natural:** Empezar con modelos simples (DNN) me ayudó a entender los fundamentos antes de saltar a arquitecturas complejas
-- **La importancia del preprocesamiento:** Normalización, tokenización y augmentación de datos marcan una diferencia huge en el rendimiento
-- **Trade-offs everywhere:** Más complejidad no siempre significa mejores resultados; a veces un modelo simple y bien tunneado supera a uno complejo mal configurado
-- **RAGs son el futuro:** Los sistemas de recuperación aumentada permiten crear aplicaciones súper útiles sin entrenar modelos desde cero
-- **Transfer learning es oro:** Usar modelos preentrenados te ahorra tiempo y recursos
-
-### Retos que enfrenté
-
-- **Overfitting constante:** Aprendí a usar dropout, early stopping y data augmentation
-- **Recursos computacionales:** GANs y VAEs requieren paciencia y una buena GPU
-- **Debugging de modelos:** Cuando algo no funciona, hay mil cosas que pueden estar mal
-
-### Trabajo futuro
-
-- **Expandir RAGs:** Implementar sistemas multi-modal que trabajen con texto, imágenes y audio
-- **Optimización:** Experimentar con pruning, quantization y destilación de modelos para deployment
-- **MLOps:** Integrar pipelines de CI/CD para modelos en producción
-- **Ethical AI:** Añadir métricas de fairness y bias detection a los modelos
-- **Edge deployment:** Adaptar modelos para correr en dispositivos móviles y IoT
+1. Extender las GANs y VAEs para generación en entornos 3D.
+1. Optimización y Despliegue en Producción
+   Implementación de pipelines CI/CD para el despliegue en producción.
+1. Estudio de sesgos en datasets y modelos, proponiendo técnicas de mitigación y buenas prácticas en el desarrollo
