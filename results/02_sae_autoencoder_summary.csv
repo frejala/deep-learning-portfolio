@@ -1,0 +1,2 @@
+accuracy,F1,loss,epochs,params,training_time_sec
+-,-,0.0061,20,-,184
